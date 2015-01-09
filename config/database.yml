@@ -1,3 +1,4 @@
+encoding: utf8
 # MySQL.  Versions 5.0+ are recommended.
 #
 # Install the MYSQL driver
@@ -14,12 +15,12 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  password: bibek123
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: day4_assginment_development
+  database: blog_db
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
