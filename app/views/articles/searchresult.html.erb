@@ -1,0 +1,13 @@
+<h1>Search results for "<%= @search_string %>"</h1>
+
+
+<ul>
+
+
+  <%@articles.each do|article| %>
+      <li><a href="<%= "showarticle?id=#{article.id}" %>"> <%= "#{article.title}" %></a> </li>
+
+  <% end %>
+</ul>
+
+<a href="http://localhost:3000/">Back</a>

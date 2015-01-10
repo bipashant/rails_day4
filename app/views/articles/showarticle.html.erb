@@ -1,0 +1,21 @@
+<h2>Title:<%=@article.title%></h2><br>
+<h3>
+  <%=@article.content%>
+</h3>
+<p><strong>comments</strong></p>
+
+
+<ul>
+  <% if @article.comments.count==0 %>
+
+      <p>0 comments</p>
+      <% else%>
+      <%@article.comments.each do|comment|%>
+      <li><%=comment.comment%></li>
+ <% end%>
+  <% end%>
+
+</ul>
+
+<a href="http://localhost:3000/">Back</a>
+
