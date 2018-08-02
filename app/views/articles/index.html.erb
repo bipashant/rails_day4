@@ -1,0 +1,35 @@
+<style>
+  a{
+      margin :2px;
+  }
+
+</style>
+
+
+<h1>List of all articles</h1>
+
+
+<table border="1">
+<tr>
+  <td><strong>Title</strong></td>
+  <td><strong>Tag</strong></td>
+</tr>
+<% @articles.each do |article|%>
+    <tr>
+<td><a href="<%= "showarticle?id=#{article.id}" %>"> <%= "#{article.title}" %></a><br></td>
+
+      <td>
+       <% article.tags.each do |tag|%>
+        <a href="<%= "tags?tag=#{tag.name}" %>"> <%= "#{tag.name}" %> </a>
+
+    <%  end %>
+
+      </td>
+
+
+    </tr>
+<%end%>
+</table>
+
+<a href="http://localhost:3000/searchresult?title=Leapfrog">Search for Leapfrog</a>
+

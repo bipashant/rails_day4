@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+
+
+  root :to => "articles#index"
+
+  get "showarticle" => "articles#showarticle"
+  get "tags" => "articles#tags"
+  get "searchresult" => "articles#searchresult"
+  resources :articles do
+
+    member do
+      get 'showarticle'
+    end
+    collection do
+      get 'tags'
+    end
+    collection do
+      get 'searchresult'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
